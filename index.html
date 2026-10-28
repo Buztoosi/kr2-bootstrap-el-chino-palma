@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El Chino Palma — ресторан в мексиканском стиле с доставкой: меню, шеф-повара, заказ доставки.">
+    <title>El Chino Palma — мексиканский ресторан</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">El Chino Palma 🌮</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Блюдо</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">Заказ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-success text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="h3 mb-1">El Chino Palma</h1>
+                    <p class="mb-0 opacity-75">Ресторан в мексиканском стиле с доставкой</p>
+                </div>
+                <div class="col-12 col-md-4 text-md-end mt-3 mt-md-0">
+                    <span class="badge bg-light text-success">КР №2</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow-1">
+        <section class="container my-5">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-6">
+                    <h2 class="display-5 fw-bold">Мексиканская кухня с доставкой до двери</h2>
+                    <p class="lead text-muted">Проект демонстрирует использование Bootstrap-сетки, адаптивных колонок и базовых utility-классов.</p>
+                    <a class="btn btn-success btn-lg" href="catalog.html">Перейти в меню</a>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="placeholder-box p-5 bg-light border rounded text-center">
+                        <p class="mb-0 text-muted">Здесь будет фото фирменного блюда</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Преимущества ресторана</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded h-100 bg-white">
+                        <h3 class="h5">Аутентичные рецепты</h3>
+                        <p class="mb-0 text-muted">Традиционные мексиканские блюда из свежих ингредиентов.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded h-100 bg-white">
+                        <h3 class="h5">Быстрая доставка</h3>
+                        <p class="mb-0 text-muted">Доставим заказ за 45 минут — или бесплатно.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border rounded h-100 bg-white">
+                        <h3 class="h5">Уютная атмосфера</h3>
+                        <p class="mb-0 text-muted">Приходите в гости — будет вкусно и весело!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5" id="popular">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">Популярные блюда</h2>
+                <a class="btn btn-outline-success" href="catalog.html">Всё меню</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                        <span class="badge bg-success mb-3">Новинка</span>
+                        <h3 class="h5">Тако аль Пастор</h3>
+                        <p class="text-muted">Кукурузная тортилья, маринованная свинина, ананас и кинза.</p>
+                        <p class="fw-bold mb-3">350 руб.</p>
+                        <a class="btn btn-success" href="product.html">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                        <span class="badge bg-warning text-dark mb-3">Хит</span>
+                        <h3 class="h5">Буррито Гранде</h3>
+                        <p class="text-muted">Сытная лепёшка с говядиной, фасолью, рисом и сыром.</p>
+                        <p class="fw-bold mb-3">450 руб.</p>
+                        <a class="btn btn-success" href="product.html">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                        <span class="badge bg-danger mb-3">Скидка</span>
+                        <h3 class="h5">Кесадилья с сыром</h3>
+                        <p class="text-muted">Хрустящая тортилья с расплавленным сыром и соусом халапеньо.</p>
+                        <p class="fw-bold mb-3">300 руб.</p>
+                        <a class="btn btn-success" href="product.html">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 El Chino Palma. Учебный проект.</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Меню</a>
+                    <a class="text-white text-decoration-none" href="order.html">Заказ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
