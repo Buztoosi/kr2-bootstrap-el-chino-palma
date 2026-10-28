@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты ресторана El Chino Palma: адрес, телефон, e-mail, форма обратной связи.">
+    <title>Контакты — El Chino Palma</title>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">El Chino Palma 🌮</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Меню</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Блюдо</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">Заказ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Дополнительно</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="catalog.html">Всё меню</a></li>
+                            <li><a class="dropdown-item" href="order.html">Оформить заказ</a></li>
+                            <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+                            <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+            </ol>
+        </nav>
+
+        <h1 class="h2 mb-4">Контакты</h1>
+
+        <div class="row g-4">
+            <div class="col-12 col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-success text-white">Как нас найти</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Адрес: г. Москва, ул. Пряная, д. 15</li>
+                        <li class="list-group-item">Телефон: <a href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+                        <li class="list-group-item">E-mail: <a href="mailto:hola@elchinopalma.ru">hola@elchinopalma.ru</a></li>
+                        <li class="list-group-item">Часы работы зала: ежедневно с 12:00 до 23:00</li>
+                        <li class="list-group-item">Приём заказов на доставку: ежедневно с 12:00 до 22:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header bg-success text-white">Обратная связь</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Имя*</label>
+                                <input id="contact-name" name="name" type="text" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">E-mail*</label>
+                                <input id="contact-email" name="email" type="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-topic" class="form-label">Тема обращения</label>
+                                <select id="contact-topic" name="topic" class="form-select">
+                                    <option selected>Выберите тему</option>
+                                    <option value="delivery">Доставка</option>
+                                    <option value="booking">Бронирование столика</option>
+                                    <option value="review">Отзыв о блюде</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Сообщение</label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input id="contact-agree" class="form-check-input" type="checkbox" required>
+                                <label class="form-check-label" for="contact-agree">Согласен на обработку данных*</label>
+                            </div>
+                            <button class="btn btn-success" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-0">&copy; 2026 El Chino Palma. Учебный проект.</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Меню</a>
+                    <a class="text-white text-decoration-none" href="order.html">Заказ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
