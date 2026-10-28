@@ -30,3 +30,23 @@ kr2-bootstrap-el-chino-palma/
 - images/ — изображения проекта;
 - README.md — описание проекта;
 - .gitignore — игнорируемые файлы.
+
+## Практическая работа 10
+Тема: «Страница на Bootstrap: компоненты».
+Выполнено:
+- добавлена единая Bootstrap-навигация с выпадающим меню dropdown;
+- создана страница каталога `catalog.html`;
+- создана страница блюда `product.html`;
+- создана страница заявки `order.html`;
+- использованы компоненты `navbar`, `card`, `btn`, `badge`, `alert`, `modal`, `form-control`, `form-select`, `input-group`, `form-check`, `accordion`;
+- добавлен файл `css/custom.css` для минимальных доработок;
+- проект подготовлен к сдаче контрольной работы №2.
+
+## Структура проекта
+- `index.html` — главная страница;
+- `catalog.html` — каталог блюд;
+- `product.html` — страница блюда;
+- `order.html` — форма заявки;
+- `css/custom.css` — дополнительные стили проекта;
+- `images/` — изображения проекта;
+- `README.md` — описание проекта.
