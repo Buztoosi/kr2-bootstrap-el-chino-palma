@@ -3,45 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var t = localStorage.getItem('ecp-theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-bs-theme', t);
+        })();
+    </script>
     <meta name="description" content="El Chino Palma — ресторан в мексиканском стиле с доставкой: меню, шеф-повара, заказ доставки.">
     <title>El Chino Palma — мексиканский ресторан</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">El Chino Palma 🌮</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="catalog.html">Меню</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="product.html">Блюдо</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="order.html">Заказ</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Дополнительно</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="catalog.html">Всё меню</a></li>
-                            <li><a class="dropdown-item" href="order.html">Оформить заказ</a></li>
-                            <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
-                            <li><a class="dropdown-item" href="contacts.html">Контакты</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    <!-- Верхняя панель -->
+<div class="top-bar bg-black text-white-50 py-2" style="font-size: 0.85rem;">
+    <div class="container d-flex justify-content-end">
+        <span>El Chino Palma &bull; ежедневно с 12:00 до 23:00</span>
+    </div>
+</div>
+
+<!-- Основной навбар -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container">
+        <!-- Логотип -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo.jpeg" alt="Логотип" class="navbar-logo me-3" style="width: 40px; height: 40px; border-radius: 50%;">
+            <div class="d-flex flex-column lh-1">
+                <span class="fw-bold fs-4 text-white">El Chino Palma</span>
+                <span class="text-white-50 text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.2em;">Мексиканский ресторан</span>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto mb-3 mb-lg-0 gap-3 text-uppercase" style="font-size: 0.9rem; font-weight: 600;">
+                <li class="nav-item"><a class="nav-link active text-white" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50 hover-white" href="catalog.html">Меню</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50 hover-white" href="contacts.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50 hover-white" href="reviews.html">Отзывы</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+                
+                
+                <a href="order.html" class="header-cta btn btn-light text-dark fw-bold rounded-0 px-4 py-2 d-inline-flex align-items-center gap-3 text-decoration-none ms-lg-2">
+                    Забронировать столик
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <header class="bg-success text-white py-4">
         <div class="container">
@@ -60,15 +77,13 @@
     <main class="flex-grow-1">
         <section class="container my-5">
             <div class="row align-items-center g-4">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 animate-on-load">
                     <h2 class="display-5 fw-bold">Мексиканская кухня с доставкой до двери</h2>
                     <p class="lead text-muted">Проект демонстрирует использование Bootstrap-сетки, адаптивных колонок и базовых utility-классов.</p>
                     <a class="btn btn-success btn-lg" href="catalog.html">Перейти в меню</a>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="placeholder-box p-5 bg-light border rounded text-center">
-                        <p class="mb-0 text-muted">Здесь будет фото фирменного блюда</p>
-                    </div>
+                <div class="col-12 col-lg-6 animate-on-load">
+                    <div class="hero-media rounded overflow-hidden shadow-sm"><img src="images/hero.jpg" alt="Фирменные блюда El Chino Palma" class="hero-img" loading="lazy"></div>
                 </div>
             </div>
         </section>
@@ -104,7 +119,8 @@
             </div>
             <div class="row g-4">
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm animate-on-load">
+                        <img src="images/dish-1.jpg" class="dish-thumb mb-3" alt="Тако аль Пастор" loading="lazy">
                         <span class="badge bg-success mb-3">Новинка</span>
                         <h3 class="h5">Тако аль Пастор</h3>
                         <p class="text-muted">Кукурузная тортилья, маринованная свинина, ананас и кинза.</p>
@@ -113,7 +129,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm animate-on-load">
+                        <img src="images/dish-2.jpg" class="dish-thumb mb-3" alt="Буррито Гранде" loading="lazy">
                         <span class="badge bg-warning text-dark mb-3">Хит</span>
                         <h3 class="h5">Буррито Гранде</h3>
                         <p class="text-muted">Сытная лепёшка с говядиной, фасолью, рисом и сыром.</p>
@@ -122,7 +139,8 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4 bg-white shadow-sm">
+                    <div class="border rounded h-100 p-4 bg-white shadow-sm animate-on-load">
+                        <img src="images/dish-3.jpg" class="dish-thumb mb-3" alt="Кесадилья с сыром" loading="lazy">
                         <span class="badge bg-danger mb-3">Скидка</span>
                         <h3 class="h5">Кесадилья с сыром</h3>
                         <p class="text-muted">Хрустящая тортилья с расплавленным сыром и соусом халапеньо.</p>
@@ -134,20 +152,94 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center g-3">
-                <div class="col-12 col-md-6">
-                    <p class="mb-0">&copy; 2026 El Chino Palma. Учебный проект.</p>
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Колонка 1: Лого и слоган -->
+            <div class="col-12 col-lg-3">
+                <a class="d-flex align-items-center text-decoration-none mb-4" href="index.html">
+                    <img src="images/logo.jpeg" alt="Логотип" class="me-3" style="width: 45px; height: 45px; border-radius: 50%; background: white; padding: 3px;">
+                    <div class="d-flex flex-column lh-1">
+                        <span class="fw-bold fs-4 text-white">El Chino Palma</span>
+                        <span class="text-white-50 text-uppercase mt-1" style="font-size: 0.65rem; letter-spacing: 0.2em;">Мексиканский ресторан</span>
+                    </div>
+                </a>
+                <p class="text-white-50">Вкус настоящей Мексики.</p>
+            </div>
+
+            <!-- Колонка 2: Разделы -->
+            <div class="col-6 col-lg-2">
+                <h5 class="text-white fw-bold mb-4 fs-6">Разделы</h5>
+                <ul class="list-unstyled d-flex flex-column gap-3">
+                    <li><a class="text-white-50 text-decoration-none hover-white" href="index.html">Главная</a></li>
+                    <li><a class="text-white-50 text-decoration-none hover-white" href="catalog.html">Меню</a></li>
+                    <li><a class="text-white-50 text-decoration-none hover-white" href="contacts.html">Контакты</a></li>
+                    <li><a class="text-white-50 text-decoration-none hover-white" href="reviews.html">Отзывы</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 3: Контакты -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <h5 class="text-white fw-bold mb-4 fs-6">Контакты</h5>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-white-50">
+                    <li class="d-flex align-items-start gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <div>
+                            <a href="tel:+79000000000" class="text-white text-decoration-none">+7 (900) 000-00-00</a><br>
+                            <span class="text-white-50" style="font-size: 0.85rem;">Ежедневно с 12:00 до 23:00</span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-center gap-3">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:hola@elchinopalma.ru" class="text-white text-decoration-none">hola@elchinopalma.ru</a>
+                    </li>
+                </ul>
+                <p class="text-white-50 mt-4 mb-2">Наши соцсети</p>
+                <div class="d-flex flex-column gap-2">
+                    <a href="#" class="btn btn-outline-secondary text-start rounded-0 text-white d-flex align-items-center gap-2 border-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.191c.136-.145.131-.419.131-.419s-.019-1.28.575-1.469c.583-.187 1.332 1.233 2.125 1.778.603.413 1.06.323 1.06.323l2.127-.03s1.111-.069.583-.944c-.042-.071-.304-.642-1.578-1.895-1.335-1.312-1.157-1.099.454-3.368 1.002-1.412 1.402-2.274 1.277-2.643-.118-.352-.85-.258-.85-.258l-2.397.015s-.178-.024-.31.055c-.128.077-.212.256-.212.256s-.376 1.002-.878 1.856c-1.065 1.803-1.491 1.898-1.666 1.786-.412-.268-.309-1.077-.309-1.653 0-1.799.267-2.547-.526-2.743-.264-.064-.457-.106-1.132-.112-.866-.009-1.598.003-2.014.208-.276.136-.49.44-.359.458.162.022.53.099.725.365.253.343.245 1.112.245 1.112s.146 2.118-.34 2.381c-.336.182-.795-.19-1.778-1.883-.505-.874-.887-1.84-.887-1.84s-.072-.177-.2-.272c-.154-.115-.368-.151-.368-.151l-2.278.015s-.342.009-.468.158c-.112.133-.008.406-.008.406s1.77 4.145 3.772 6.234c1.836 1.916 3.921 1.79 3.921 1.79h.945z"/></svg>
+                        Наша группа в ВКонтакте
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary text-start rounded-0 text-white d-flex align-items-center gap-2 border-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        Наш канал в Telegram
+                    </a>
                 </div>
-                <div class="col-12 col-md-6 text-md-end">
-                    <a class="text-white text-decoration-none me-3" href="catalog.html">Меню</a>
-                    <a class="text-white text-decoration-none" href="order.html">Заказ</a>
+            </div>
+
+            <!-- Колонка 4: Карточка -->
+            <div class="col-12 col-lg-3">
+                <div class="p-4 border border-secondary h-100 d-flex flex-column" style="background-color: #1a2026;">
+                    <h5 class="text-white fw-bold mb-3 fs-5">El Chino Palma — ресторан</h5>
+                    <p class="text-white-50 mb-2 d-flex gap-2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-1 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>г. Москва, ул. Пряная, д. 15</span>
+                    </p>
+                    <p class="text-white-50 mb-1">Мексиканская кухня с доставкой</p>
+                    <p class="text-white-50 mb-4">Посещение — по предварительной записи</p>
+                    <a href="contacts.html" class="text-white-50 text-decoration-none mb-4 d-inline-block hover-white">Посмотреть на карте</a>
+                    <a href="order.html" class="header-cta btn btn-outline-light rounded-0 mt-auto py-2 w-100 border-secondary text-white fw-bold">Забронировать столик</a>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <hr class="border-secondary my-5">
+
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <p class="mb-0 text-white-50">&copy; 2026 El Chino Palma. Все права защищены.</p>
+            </div>
+            <div class="col-12 col-md-6 text-md-end mt-3 mt-md-0">
+                <span class="text-white-50">Учебный проект. Практические работы 9–11</span>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/theme.js"></script>
+<button type="button" class="theme-toggle-olive btn btn-outline-light border-secondary rounded-0 p-2 d-flex align-items-center justify-content-center" data-theme-toggle aria-label="Переключить тему" style="width: 40px; height: 40px;">
+                    <span class="theme-icon text-white" aria-hidden="true">🌙</span>
+                </button>
 </body>
 </html>

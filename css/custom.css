@@ -1,16 +1,103 @@
-body {
-  min-height: 100vh;
-}
-
-.placeholder-box {
-  min-height: 240px;
-}
-
-.placeholder-image {
-  min-height: 320px;
-}
-
-.card-img-top {
+/* ===== Размеры изображений (восстановлено после потери файла) ===== */
+.dish-thumb {
+  width: 100%;
   height: 180px;
+  max-height: 180px;
   object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+}
+
+.card-img-top,
+.card img {
+  width: 100%;
+  height: 180px;
+  max-height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-img,
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 460px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.product-img,
+.placeholder-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* anim-pack: три пункта анимаций на всех страницах */
+
+/* Пункт 3: плавная прокрутка к якорям */
+html { scroll-behavior: smooth; }
+
+/* Пункт 2: каскадное появление при загрузке */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.card,
+.dish-thumb,
+.card-img-top,
+.hero-media,
+.hero-img,
+.product-img,
+.placeholder-image {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+.row > *:nth-child(2) .card, .row > *:nth-child(2) .dish-thumb { animation-delay: .12s; }
+.row > *:nth-child(3) .card, .row > *:nth-child(3) .dish-thumb { animation-delay: .24s; }
+.row > *:nth-child(4) .card, .row > *:nth-child(4) .dish-thumb { animation-delay: .36s; }
+.row > *:nth-child(5) .card, .row > *:nth-child(5) .dish-thumb { animation-delay: .48s; }
+.row > *:nth-child(6) .card, .row > *:nth-child(6) .dish-thumb { animation-delay: .60s; }
+
+/* Пункт 1: hover — карточка приподнимается, фото зумится в рамке */
+.card,
+.hero-media,
+.placeholder-image {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover,
+.hero-media:hover,
+.placeholder-image:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+}
+.card img,
+.dish-thumb,
+.card-img-top,
+.hero-img,
+.product-img {
+  transition: transform .4s ease;
+  clip-path: inset(0 round 10px);
+}
+.card:hover img,
+.dish-thumb:hover,
+.hero-media:hover img,
+.placeholder-image:hover img {
+  transform: scale(1.06);
+}
+
+/* Защита: без анимаций, если пользователь просил меньше движения */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, .dish-thumb, .card-img-top, .hero-media, .hero-img,
+  .product-img, .placeholder-image { animation: none !important; }
+  .card, .card img, .dish-thumb, .hero-img, .product-img,
+  .hero-media, .placeholder-image { transition: none !important; }
 }
